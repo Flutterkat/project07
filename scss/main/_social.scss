@@ -1,0 +1,37 @@
+.social {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.social-block {
+    height: 100px;
+    width: 90%;
+    border: 1px solid gray;
+    border-radius: 5px;;
+    background-color:rgba(192, 192, 192, 0.575);
+    margin-bottom: 15px;
+    & h3 {
+    color:#7477bf;
+    font-weight: bold;
+    }
+    & h1, & h3{
+        margin: 0px;
+    }
+}
+
+.soc-text-align {
+    margin-top: 20px;
+}
+
+.social-svg {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+
+.social-icon {
+    margin-left:auto;
+    fill: #7477bf;
+}

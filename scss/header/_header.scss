@@ -1,0 +1,106 @@
+header {
+    display: grid;
+    align-items: center;
+    height: 75px;
+    width: 100%;
+    background-color: #7477bf;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 1fr;
+    column-gap: 5px;
+}
+
+header h1 {
+    margin-left: 5px;
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.header-right-wrapper {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.nav-links {
+    justify-items: center;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    transition: transform .3s ease-out;
+}
+
+.icon-a {
+    width: 50px;
+    height: 50px;
+}
+
+.icon:hover:not(.bell) {
+    transform: scale(1.2);
+}
+
+.notification {
+    transition: transform .5s ease-out;
+}
+
+@keyframes ring {
+    0%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.notification {
+    border-right: 2px solid rgba(192, 192, 192, 0.575);
+}
+
+.bell-wrapper {
+    height: 55px;
+    perspective: 1px;
+}
+
+.badge {
+    width: 7px;
+    height: 7px;
+    margin-right: 5px;
+    margin-left: auto;
+    
+    border-radius: 50%;
+    background: #90ee90;
+  }
+
+.bell {
+    width:45px;
+    height:45px;
+}
+
+.bell:hover {
+    animation: ring .5s ease-in-out backwards;
+}
+
+.bell-path {
+    fill: #fff;
+}
+
+.heading-picture {
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 50%;
+}
+
+.header-right-wrapper p {
+    color: #fff;
+    font-size: .8em;
+    margin-top: auto;
+    margin-bottom: auto;
+}

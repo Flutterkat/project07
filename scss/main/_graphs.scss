@@ -1,0 +1,42 @@
+.chart-divs {
+    height: 200px;
+    width: 100%;
+}
+
+#lineChart,
+#barChart
+ {
+    margin: 0px 10px;
+}
+
+#doughnutChart {
+    margin: -30px 10px;
+}
+
+.titles {
+    font-weight: bold;
+    margin: 15px 0px 5px 10px;
+}
+
+#chart-links{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.chart-link {
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    padding: 5px 5px;
+}
+
+.chart-link:hover {
+    transform: scale(1.1);
+    background-color:#81c98f;
+}
+
+.divide {
+    border-bottom: 1px solid gray;
+}
