@@ -25,6 +25,8 @@ const sendMessage = `<p style="color:steelblue; margin:10px 10px; text-decoratio
 
 const errorMessage = `<p style="color:steelblue; margin:10px 10px; text-decoration:none; text-align:left; display:block;">Message failed to send, please check that both input fields have been filled out correctly.</p>`;
 
+
+//function that creates pop up windows.
 const notificationWindow = (toDisplay, className, trueORfalse) => {
     popUpWindow.className = className;
     popUpStyle.position = 'absolute';
@@ -38,6 +40,7 @@ const notificationWindow = (toDisplay, className, trueORfalse) => {
     popUpWindow.innerHTML = toDisplay;
 }
 
+//listens to the bell icon and populates appropriate pop up windows. or hides them
 notification.addEventListener('click', () => {
     const badge = document.getElementsByClassName('badge')[0];
     const checkWindow = document.getElementsByClassName('notificationPopUp')[0];
@@ -64,10 +67,12 @@ notification.addEventListener('click', () => {
         }
 });
 
+//hides the alert message at top of page when clicked
 alertDiv.addEventListener('click', () => {
     alertDiv.style.display = 'none';
 });
 
+//sets the initial bg color of the 'hourly' button above lineChart.
 setHourlyBg = () => {
     const hourly = document.getElementsByClassName('hourly')[0];
     hourly.style.backgroundColor = '#90ee90';
@@ -80,6 +85,7 @@ const dailyBg = document.getElementsByClassName('daily')[0];
 const weeklyBg = document.getElementsByClassName('weekly')[0];
 const monthlyBg = document.getElementsByClassName('monthly')[0];
 
+//function to choose bg colors of 'hourly, daily, weekly, monthly' buttons above line chart
 let chartBg = (color1, color2, color3, color4) => {
         hourlyBg.style.backgroundColor = color1;
         dailyBg.style.backgroundColor = color2;
@@ -87,6 +93,8 @@ let chartBg = (color1, color2, color3, color4) => {
         monthlyBg.style.backgroundColor = color4;
 };
 
+
+//sets bg colors of 'hourly, daily, weekly, monthly' buttons above line chart on click.
 chartLinks.addEventListener('click', (e) => {
     let target = e.target;
     if (target.className === 'chart-link hourly') {
@@ -100,6 +108,7 @@ chartLinks.addEventListener('click', (e) => {
     }
 });
 
+//creates pop up windows and sets them to hidden
 notificationWindow(sendMessage, 'messageSent', true);
 messageBtn.appendChild(popUpWindow);
 notificationWindow(errorMessage, 'messageFailed', true);
@@ -109,6 +118,7 @@ messageBtn.appendChild(popUpWindow);
 const messageSentWindow = messageBtn.lastElementChild;
 const messageFailedWindow = messageBtn.lastElementChild;
 
+//controls the searchField and textArea. changes the bg colors on error, generates and shows pop up windows upon clicking the 'send' button. sets field values to '' after a message is sent.
 body.addEventListener('click', (e) => {
     if (e.target.className === "message-button") {
 
@@ -149,7 +159,7 @@ body.addEventListener('click', (e) => {
     }
 });
 
-
+//creates array list for autofill of user search bar.
 let listArray = ['Victoria Chambers',
                  'Dale Byrd',
                  'Dawn Wood',
@@ -159,6 +169,7 @@ let listArray = ['Victoria Chambers',
 
 
 // pulled this function from https://www.w3schools.com/howto/howto_js_autocomplete.asp and altered it to fit my project.
+// generates autofill functionality for user searchbar.
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -210,7 +221,7 @@ function autocomplete(inp, arr) {
   });
   }
 
-  autocomplete(searchField, listArray)
+autocomplete(searchField, listArray);
 
 const timezone = document.getElementById('timezone');
 const saveBtn = document.getElementsByClassName('save')[0];
@@ -220,6 +231,7 @@ const emailSwitch = document.getElementsByTagName('input')[1];
 const profileSwitch = document.getElementsByTagName('input')[2];
 let timezoneString = timezone.value;
 
+//handles the options area of the page. stores or resets options for email slide bar, profile public slide bar, and timezone.
 btnWrapper.addEventListener ('click', (e) => {
     if (e.target.className === 'save btn') {
         let timezoneString = timezone.value;
@@ -238,6 +250,7 @@ btnWrapper.addEventListener ('click', (e) => {
     }
 });
 
+//checks and then sets the settings saved inside the localStorage upon page refresh.
 function settingsFunc() {
     if(localStorage.getItem('timezone') !== null) {
     timezone.value = localStorage.getItem('timezone')
