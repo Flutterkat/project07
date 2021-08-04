@@ -1,12 +1,56 @@
+.message:not(form) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .1fr;
+    row-gap: 20px;
+}
+
+form {
+    display: grid;
+    margin-top: 10px;
+    margin-bottom: 11px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.messageSent, .messageFailed {
+    left: 80px;
+}
+
+.autoComplete {
+    display: inline-flex;
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+}
+
 .search-field, .message-button {
     height: 40px;
-    width: 81%;
+    width: 87%;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
     background-color:rgba(192, 192, 192, 0.575);
-    border: 1px solid rgba(148, 146, 146, 0.856);
 }
+
+.search-field {
+    padding: 10px;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    color:rgba(85, 85, 85, .8);
+    background-color: rgb(148, 146, 146);
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    width: 85%;
+    top: 59%;
+    left: 23px;
+    right: 0;
+    font-size: 1.2em;
+  }
 
 .text-area {
     height: 100px;
@@ -16,12 +60,13 @@
     border-radius: 5px;
     background-color:rgba(192, 192, 192, 0.575);
     border: 2px solid rgba(148, 146, 146, 0.856);
+    padding: 10px;
 }
 
 .message-button {
     background-color: #7477bf;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .options-text {
@@ -56,12 +101,13 @@
     position: absolute;
     cursor: pointer;
     top: 0;
-    left: 0;
+    left: 0px;
     right: 0;
     bottom: 0;
     background-color: $switch-color;
     -webkit-transition: .4s;
     transition: .4s;
+    --slide: 40px;
 }
 
 .slider:before {
@@ -85,9 +131,7 @@
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(40px);
-    -ms-transform: translateX(40px);
-    transform: translateX(40px);
+    transform: translateX(var(--slide));
   }
   
   /* Rounded sliders */

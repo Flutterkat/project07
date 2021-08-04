@@ -102,12 +102,24 @@
         margin-bottom: auto;
     }
 
-    .search-field,
     .text-area,
     .message-button,
     #timezone,
     .save-wrapper button {
-        width: 95%;
+        width: 90%;
+    }
+
+    .search-field {
+        width: 93%;
+    }
+
+    .messageSent, .messageFailed {
+        left: 330px;
+    }
+
+    .autocomplete-items {
+        width: 92%;
+        left: 27px;
     }
 
     .switch-wrapper {
@@ -181,11 +193,24 @@
     }
 
     .switch-wrapper {
-        margin-bottom: 28px;
+        margin-bottom: 39px;
     }
 
     #timezone {
         margin-bottom: 18px;
+    }
+
+    .search-field {
+        width: 95%;
+    }
+
+    .autocomplete-items {
+        width: 93%;
+        left: 15px;
+    }
+
+    .messageSent, .messageFailed {
+        left: 220px;
     }
 
 }

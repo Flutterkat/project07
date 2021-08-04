@@ -232,9 +232,13 @@
 
                             <h3 class="titles">MESSAGE USER</h3>
                             <div class=message>
-                                <input type="search" class="search-field" placeholder="Search for User">
-                                <textarea class="text-area" placeholder="Message for User"></textarea>
-                                <button type="submit" class="message-button">SEND</button>
+                                    <form id="form" class="message" autocomplete="off">
+                                        <div class="autoComplete">
+                                        <input type="search" class="search-field" placeholder="Search for User">
+                                        </div>
+                                        <textarea class="text-area" placeholder="Message for User"></textarea>
+                                    </form>
+                                <button type="submit" form="form" class="message-button" id="button">SEND</button>
                             </div>
                         </div>
 
@@ -277,8 +281,8 @@
                             </div>
 
                             <div class=save-wrapper>
-                                <button type="submit" class="save btn">SAVE</button>
-                                <button type="submit" class="cancel btn">CANCEL</button>
+                                <button type="button" class="save btn">SAVE</button>
+                                <button type="button" class="cancel btn">CANCEL</button>
                             </div>
                         </div>
                     </div>

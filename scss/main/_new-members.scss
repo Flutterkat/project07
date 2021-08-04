@@ -48,12 +48,6 @@
     margin-right: auto;
 }
 
-.message {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    row-gap: 20px;
-}
 
 .last-member {
     border-bottom: none;
