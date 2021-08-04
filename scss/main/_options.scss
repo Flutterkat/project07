@@ -107,7 +107,6 @@ form {
     background-color: $switch-color;
     -webkit-transition: .4s;
     transition: .4s;
-    --slide: 40px;
 }
 
 .slider:before {
@@ -131,7 +130,7 @@ form {
   }
   
   input:checked + .slider:before {
-    transform: translateX(var(--slide));
+    transform: translateX(40px);
   }
   
   /* Rounded sliders */

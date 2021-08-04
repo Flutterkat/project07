@@ -38,12 +38,11 @@ const notificationWindow = (toDisplay, className, trueORfalse) => {
     popUpStyle.boxShadow = 'inset 0 0 3px 3px gray';
     popUpWindow.hidden = trueORfalse;
     popUpWindow.innerHTML = toDisplay;
-}
+};
 
 //listens to the bell icon and populates appropriate pop up windows. or hides them
 notification.addEventListener('click', () => {
     const badge = document.getElementsByClassName('badge')[0];
-    const checkWindow = document.getElementsByClassName('notificationPopUp')[0];
 
     if (notification.children[1] === undefined) {
     notificationWindow(checkedMessages, 'notificationPopUp', true);
@@ -57,13 +56,13 @@ notification.addEventListener('click', () => {
             notification.appendChild(popUpWindow);
             bellPosition.setAttribute("viewBox", "-20 -25 150 150");
             badge.hidden = true;
-        } else if (notification.children[1].hidden = true) {
-            notification.children[1].remove()
+        } else if (notification.children[1].hidden == true) {
+            notification.children[1].remove();
             notificationWindow(checkedMessages, 'notificationPopUp', false);
             notification.appendChild(popUpWindow);
        }
     } else if (notification.children[1].hidden == false) {
-        notification.children[1].hidden = true
+        notification.children[1].hidden = true;
         }
 });
 
@@ -98,13 +97,13 @@ let chartBg = (color1, color2, color3, color4) => {
 chartLinks.addEventListener('click', (e) => {
     let target = e.target;
     if (target.className === 'chart-link hourly') {
-        chartBg('#90ee90', 'transparent', 'transparent', 'transparent')
+        chartBg('#90ee90', 'transparent', 'transparent', 'transparent');
     } else if (target.className === 'chart-link daily') {
-        chartBg('transparent', '#90ee90', 'transparent', 'transparent')
+        chartBg('transparent', '#90ee90', 'transparent', 'transparent');
     } else if (target.className === 'chart-link weekly') {
-        chartBg('transparent', 'transparent', '#90ee90', 'transparent')
+        chartBg('transparent', 'transparent', '#90ee90', 'transparent');
     } else if (target.className === 'chart-link monthly') {
-        chartBg('transparent', 'transparent', 'transparent', '#90ee90')
+        chartBg('transparent', 'transparent', 'transparent', '#90ee90');
     }
 });
 
@@ -124,25 +123,25 @@ body.addEventListener('click', (e) => {
 
         e.preventDefault();
 
-        searchField.style.backgroundColor = 'rgba(192, 192, 192, 0.575)'
-        searchField.style.border = 'none'
-        textArea.style.backgroundColor = 'rgba(192, 192, 192, 0.575)'
-        textArea.style.border = 'rgba(148, 146, 146, 0.856)'
+        searchField.style.backgroundColor = 'rgba(192, 192, 192, 0.575)';
+        searchField.style.border = 'none';
+        textArea.style.backgroundColor = 'rgba(192, 192, 192, 0.575)';
+        textArea.style.border = 'rgba(148, 146, 146, 0.856)';
 
         if (searchField.value == '' || textArea.value == '') {
             notificationWindow(errorMessage, 'messageFailed', false);
             messageBtn.appendChild(popUpWindow);
 
             if (searchField.value == '') {
-                searchField.style.backgroundColor = 'rgba(255, 0, 0, .2)'
-                searchField.style.border = '3px solid rgb(255, 0, 0)'
+                searchField.style.backgroundColor = 'rgba(255, 0, 0, .2)';
+                searchField.style.border = '3px solid rgb(255, 0, 0)';
             }
 
             if (textArea.value == '') {
-                textArea.style.backgroundColor = 'rgba(255, 0, 0, .2)'
-                textArea.style.border = '3px solid rgb(255, 0, 0)'
+                textArea.style.backgroundColor = 'rgba(255, 0, 0, .2)';
+                textArea.style.border = '3px solid rgb(255, 0, 0)';
             }
-            return
+            return;
         }
 
     notificationWindow(sendMessage, 'messageSent', false);
@@ -196,18 +195,7 @@ function autocomplete(inp, arr) {
         }
     });
    
-    function addActive(x) {
-      if (!x) return false;
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = (x.length - 1);
-      x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("autocomplete-active");
-      }
-    }
+
     function closeAllLists(elmnt) {
       var x = document.getElementsByClassName("autocomplete-items");
       for (var i = 0; i < x.length; i++) {
@@ -224,12 +212,9 @@ function autocomplete(inp, arr) {
 autocomplete(searchField, listArray);
 
 const timezone = document.getElementById('timezone');
-const saveBtn = document.getElementsByClassName('save')[0];
-const cancelBtn = document.getElementsByClassName('cancel')[0];
 const btnWrapper = document.getElementsByClassName('save-wrapper')[0];
 const emailSwitch = document.getElementsByTagName('input')[1];
 const profileSwitch = document.getElementsByTagName('input')[2];
-let timezoneString = timezone.value;
 
 //handles the options area of the page. stores or resets options for email slide bar, profile public slide bar, and timezone.
 btnWrapper.addEventListener ('click', (e) => {
@@ -253,7 +238,7 @@ btnWrapper.addEventListener ('click', (e) => {
 //checks and then sets the settings saved inside the localStorage upon page refresh.
 function settingsFunc() {
     if(localStorage.getItem('timezone') !== null) {
-    timezone.value = localStorage.getItem('timezone')
+    timezone.value = localStorage.getItem('timezone');
     }
     if (localStorage.getItem('emailNotifications') !== null && localStorage.getItem('emailNotifications') === "true") {
     emailSwitch.checked = Boolean.valueOf(localStorage.getItem('emailNotifications'));
