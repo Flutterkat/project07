@@ -1,16 +1,11 @@
 .message:not(form) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr .1fr;
-    row-gap: 20px;
+    @include grid (1fr, 1fr .1fr, 20px, null, null);
 }
 
 form {
-    display: grid;
-    margin-top: 10px;
-    margin-bottom: 11px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
+    @include grid (1fr, 1fr 2fr, null, null, null) {
+        @include margins (10px, null, 11px, null);
+    }
 }
 
 .messageSent, .messageFailed {
@@ -25,12 +20,12 @@ form {
 }
 
 .search-field, .message-button {
-    height: 40px;
-    width: 87%;
-    margin-left: auto;
-    margin-right: auto;
+    @include WxH (87%, 40px) {
+        @include margins (null, auto, null, auto);
     border-radius: 5px;
-    background-color:rgba(192, 192, 192, 0.575);
+    border: $border;
+    background-color:#fff;
+    }
 }
 
 .search-field {
@@ -39,9 +34,9 @@ form {
 
 .autocomplete-items {
     position: absolute;
-    border: 1px solid #d4d4d4;
+    border: $border;
     color:rgba(85, 85, 85, .8);
-    background-color: rgb(148, 146, 146);
+    background-color: #fff;
     border-bottom: none;
     border-top: none;
     z-index: 99;
@@ -53,18 +48,17 @@ form {
   }
 
 .text-area {
-    height: 100px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    @include margins (null, auto, null, auto) {
+        @include WxH (80%, 100px);
     border-radius: 5px;
-    background-color:rgba(192, 192, 192, 0.575);
-    border: 2px solid rgba(148, 146, 146, 0.856);
+    background-color:#fff;
+    border: $border;
     padding: 10px;
+    }
 }
 
 .message-button {
-    background-color: #7477bf;
+    background-color: $primary-color;
     border-radius: 5px;
     margin-bottom: 25px;
 }
@@ -74,10 +68,9 @@ form {
 }
 
 .switch-wrapper {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+    @include grid (2fr 1fr, null, null, null, center) {
     margin-bottom: 10px;
+    }
 }
 
 .switch h3 {
@@ -85,16 +78,16 @@ form {
 }
 
 .switch {
+    @include WxH (75px, 34px) {
     position: relative;
     display: inline-block;
-    width: 75px;
-    height: 34px;
+    }
 }
 
 .switch input {
+    @include WxH (0, 0) {
     opacity: 0;
-    width: 0;
-    height: 0;
+    }
 }
 
 .slider {
@@ -158,41 +151,37 @@ form {
       font-size: .8em;
   }
 
-  .timezone, .save-wrapper {
+  .timezone {
       display: grid;
   }
 
   #timezone {
-      width: 80%;
-      height: 40px;
-      margin-left: auto;
-      margin-right:auto;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      @include margins (20px, auto, 10px, auto) {
+          @include WxH (80%, 40px);
+      }
   }
 
 .save-wrapper {
+    @include grid (repeat(2, 1fr), null, null, 5px, center) {
     width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    align-self: center;
-    column-gap: 5px;
     padding-bottom: 30px;
+    }
 }
 
 .save {
+    @include WxH (80%, 40px) {
     margin-left: auto;
-    width: 80%;
-    height: 40px;
     background-color: $primary-color;
     color: #fff;
     border-radius: 5px;
+    }
 }
 
 .cancel {
+    @include WxH (80%, 40px) {
     margin-right: auto;
-    width: 80%;
-    height: 40px;
     background-color: $switch-color;
     color: #fff;
     border-radius: 5px;
+    }
 }

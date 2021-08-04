@@ -1,12 +1,8 @@
 header {
-    display: grid;
-    align-items: center;
-    height: 75px;
-    width: 100%;
-    background-color: #7477bf;
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: 1fr;
-    column-gap: 5px;
+    @include grid (2fr 3fr, 1fr, null, 5px, center) {
+    @include WxH(100%, 75px);
+    background-color: $primary-color;
+    }
 }
 
 header h1 {
@@ -16,9 +12,9 @@ header h1 {
 }
 
 .header-right-wrapper {
+    @include margins (null, 5px, null, auto) {
     display: inline-flex;
-    margin-left: auto;
-    margin-right: 5px;
+    }
 }
 
 .nav-links {
@@ -26,14 +22,15 @@ header h1 {
 }
 
 .icon {
+    @include WxH (50px, 50px) {
     width: 50px;
     height: 50px;
     transition: transform .3s ease-out;
+    }
 }
 
 .icon-a {
-    width: 50px;
-    height: 50px;
+    @include WxH (50px, 50px);
 }
 
 .icon:hover:not(.bell) {
@@ -57,27 +54,25 @@ header h1 {
 }
 
 .notification {
-    border-right: 2px solid rgba(192, 192, 192, 0.575);
+    border-right: 2px solid $background-color;
 }
 
 .bell-wrapper {
-    height: 55px;
+    @include WxH (null, 55px) {
     perspective: 1px;
+    }
 }
 
 .badge {
-    width: 7px;
-    height: 7px;
-    margin-right: 5px;
-    margin-left: auto;
-    
+    @include margins (null, 5px, null, auto) {
+    @include WxH (7px, 7px);
     border-radius: 50%;
-    background: #90ee90;
-  }
+    background: $lime-green;
+    }
+}
 
 .bell {
-    width:45px;
-    height:45px;
+    @include WxH (45px, 45px);
 }
 
 .bell:hover {
@@ -89,18 +84,15 @@ header h1 {
 }
 
 .heading-picture {
-    width: 40px;
-    height: 40px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: auto;
-    margin-bottom: auto;
+    @include margins (auto, 5px, auto, 5px) {
+    @include WxH (40px, 40px);
     border-radius: 50%;
+    }
 }
 
 .header-right-wrapper p {
+    @include margins (auto, null, auto, null) {
     color: #fff;
     font-size: .8em;
-    margin-top: auto;
-    margin-bottom: auto;
+    }
 }

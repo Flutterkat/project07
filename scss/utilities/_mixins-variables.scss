@@ -1,3 +1,30 @@
 $primary-color: (#7477bf);
 $secondary-color: (#4d4c72);
+$background-color: (rgba(138, 138, 138, 0.575));
 $switch-color: lighten(#7477bf, 10);
+$lime-green: (#90ee90);
+$border: 2px solid $background-color;
+
+@mixin grid ($templateColumns, $templateRows, $rowGap, $columnGap, $align) {
+    display: grid;
+    grid-template-columns: $templateColumns;
+    grid-template-rows: $templateRows;
+    row-gap: $rowGap;
+    column-gap: $columnGap;
+    align-items: $align;
+    @content;
+}
+
+@mixin margins ($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+    @content;
+}
+
+@mixin WxH ($width, $height) {
+    width: $width;
+    height: $height;
+    @content
+}

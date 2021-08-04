@@ -1,6 +1,5 @@
 .chart-divs {
-    height: 200px;
-    width: 100%;
+    @include WxH (100%, 200px);
 }
 
 #lineChart,
@@ -19,11 +18,9 @@
 }
 
 #chart-links{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    @include grid (repeat(4, 1fr), null, null, null, null);
 }
 .chart-link {
-    align-self: center;
     justify-self: center;
     text-align: center;
     text-decoration: none;
@@ -34,9 +31,8 @@
 
 .chart-link:hover {
     transform: scale(1.1);
-    background-color:#81c98f;
 }
 
 .divide {
-    border-bottom: 1px solid gray;
+    border-bottom: $border;
 }

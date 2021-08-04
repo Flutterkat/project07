@@ -1,19 +1,18 @@
 .social {
-    display: grid;
+    @include grid (1fr, repeat(3, 1fr), nul, null, null) {
     justify-items: center;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
+    }
 }
 
 .social-block {
-    height: 100px;
-    width: 90%;
-    border: 1px solid gray;
+    @include WxH (90%, 100px) {
+    border: $border;
     border-radius: 5px;;
-    background-color:rgba(192, 192, 192, 0.575);
+    background-color:$background-color;
     margin-bottom: 15px;
+    }
     & h3 {
-    color:#7477bf;
+    color:$primary-color;
     font-weight: bold;
     }
     & h1, & h3{
@@ -26,12 +25,12 @@
 }
 
 .social-svg {
+    @include WxH (100px, 100px) {
     float: left;
-    height: 100px;
-    width: 100px;
+    }
 }
 
 .social-icon {
     margin-left:auto;
-    fill: #7477bf;
+    fill: $primary-color;
 }
