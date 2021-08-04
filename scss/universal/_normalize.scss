@@ -352,3 +352,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+
+body {
+  @include grid (100%, null, null, null, null);
+  width: 100%;
+}

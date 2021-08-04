@@ -27,10 +27,12 @@
 .social-svg {
     @include WxH (100px, 100px) {
     float: left;
+    background: $primary-color;
+    border-radius: 50%;
     }
 }
 
 .social-icon {
     margin-left:auto;
-    fill: $primary-color;
+    fill: #fff;
 }

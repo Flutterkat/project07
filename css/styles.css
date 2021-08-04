@@ -307,6 +307,11 @@ template {
   font-family: 'Roboto', sans-serif;
   font-weight: 300; }
 
+body {
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%; }
+
 header {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -521,11 +526,13 @@ header h1 {
 .social-svg {
   width: 100px;
   height: 100px;
-  float: left; }
+  float: left;
+  background: #7477bf;
+  border-radius: 50%; }
 
 .social-icon {
   margin-left: auto;
-  fill: #7477bf; }
+  fill: #fff; }
 
 .new-members {
   display: grid;
