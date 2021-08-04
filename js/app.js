@@ -51,6 +51,7 @@ notification.addEventListener('click', () => {
         if (badge.hidden == false) {
             notification.children[1].remove();
             notificationWindow(newMessages, 'notificationPopUp', false);
+            alertDiv.style.display = 'none';
             notification.appendChild(popUpWindow);
             bellPosition.setAttribute("viewBox", "-20 -25 150 150");
             badge.hidden = true;
