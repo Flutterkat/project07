@@ -346,16 +346,11 @@ header h1 {
 .nav-links {
   justify-items: center; }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  width: 50px;
-  height: 50px;
-  transition: transform .3s ease-out; }
-
-.icon-a {
+.icon, .icon-a {
   width: 50px;
   height: 50px; }
+  .icon .icon, .icon-a .icon {
+    transition: transform .3s ease-out; }
 
 .icon:hover:not(.bell) {
   transform: scale(1.2); }
@@ -515,8 +510,9 @@ header h1 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, 1fr);
-  row-gap: nul;
-  justify-items: center; }
+  row-gap: 10px;
+  justify-items: center;
+  margin-bottom: 15px; }
 
 .social-block {
   width: 90%;
@@ -524,8 +520,7 @@ header h1 {
   display: flex;
   border: 2px solid rgba(138, 138, 138, 0.575);
   border-radius: 5px;
-  background-color: rgba(138, 138, 138, 0.575);
-  margin-bottom: 15px; }
+  background-color: rgba(138, 138, 138, 0.575); }
   .social-block h3 {
     color: #7477bf;
     font-weight: bold; }
@@ -608,8 +603,7 @@ form {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr;
-  margin-top: 10px;
-  margin-bottom: 11px; }
+  margin: 10px null 11px null; }
 
 .messageSent, .messageFailed {
   left: 80px; }
@@ -623,8 +617,7 @@ form {
 .search-field, .message-button {
   width: 87%;
   height: 40px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: auto;
   border-radius: 5px;
   border: 2px solid rgba(138, 138, 138, 0.575);
   background-color: #fff; }
@@ -647,10 +640,9 @@ form {
   font-size: 1.2em; }
 
 .text-area {
-  margin-right: auto;
-  margin-left: auto;
   width: 80%;
   height: 100px;
+  margin: auto;
   border-radius: 5px;
   background-color: #fff;
   border: 2px solid rgba(138, 138, 138, 0.575);
@@ -740,12 +732,9 @@ input:checked + .slider:before {
   display: grid; }
 
 #timezone {
-  margin-top: 20px;
-  margin-right: auto;
-  margin-bottom: 10px;
-  margin-left: auto;
   width: 80%;
-  height: 40px; }
+  height: 40px;
+  margin: 20px auto 10px auto; }
 
 .save-wrapper {
   display: grid;
@@ -792,6 +781,19 @@ input:checked + .slider:before {
   .remove {
     display: none; }
 
+  #chart-links {
+    display: inline-flex;
+    width: 100%; }
+
+  .chart-link:not(.hourly) {
+    margin-left: 15px; }
+
+  .hourly {
+    margin-left: auto; }
+
+  .monthly {
+    margin-right: 15px; }
+
   .mq-charts {
     display: grid;
     grid-template-columns: 1.25fr 1fr; }
@@ -810,7 +812,14 @@ input:checked + .slider:before {
   .social {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr; }
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%; }
+
+  .social-block {
+    width: 100%; }
 
   .members {
     flex-direction: row; }

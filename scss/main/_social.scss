@@ -1,6 +1,7 @@
 .social {
-    @include grid (1fr, repeat(3, 1fr), nul, null, null) {
+    @include grid (1fr, repeat(3, 1fr), 10px, null, null) {
     justify-items: center;
+    margin-bottom: 15px;
     }
 }
 
@@ -10,7 +11,6 @@
     border: $border;
     border-radius: 5px;;
     background-color:$background-color;
-    margin-bottom: 15px;
     }
     & h3 {
     color:$primary-color;

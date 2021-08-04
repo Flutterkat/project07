@@ -24,6 +24,24 @@
         display: none;
     }
 
+    #chart-links {
+        display: inline-flex;
+        width: 100%;
+    }
+
+
+    .chart-link:not(.hourly) {
+        margin-left: 15px;
+    }
+
+    .hourly {
+        margin-left: auto;
+    }
+
+    .monthly {
+        margin-right: 15px;
+    }
+
     .mq-charts{
         @include grid (1.25fr 1fr, null, null, null, null) {
         }
@@ -44,7 +62,14 @@
     }
 
     .social {
-        @include grid (repeat(3, 1fr), 1fr, null, null, null)
+        @include grid (repeat(3, 1fr), 1fr, null, 10px, null) {
+            @include margins(null, auto, null, auto);
+        width: 95%;
+        }
+    }
+
+    .social-block {
+        width: 100%;
     }
 
     .members {

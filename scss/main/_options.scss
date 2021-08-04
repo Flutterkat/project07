@@ -4,7 +4,7 @@
 
 form {
     @include grid (1fr, 1fr 2fr, null, null, null) {
-        @include margins (10px, null, 11px, null);
+        margin: 10px null 11px null;
     }
 }
 
@@ -21,7 +21,7 @@ form {
 
 .search-field, .message-button {
     @include WxH (87%, 40px) {
-        @include margins (null, auto, null, auto);
+    margin: auto;
     border-radius: 5px;
     border: $border;
     background-color:#fff;
@@ -48,8 +48,8 @@ form {
   }
 
 .text-area {
-    @include margins (null, auto, null, auto) {
-        @include WxH (80%, 100px);
+    @include WxH (80%, 100px) {
+    margin: auto;
     border-radius: 5px;
     background-color:#fff;
     border: $border;
@@ -156,9 +156,9 @@ form {
   }
 
   #timezone {
-      @include margins (20px, auto, 10px, auto) {
-          @include WxH (80%, 40px);
-      }
+    @include WxH (80%, 40px) {
+        margin: 20px auto 10px auto;
+    }
   }
 
 .save-wrapper {
