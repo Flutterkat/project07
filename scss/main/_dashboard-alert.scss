@@ -39,8 +39,8 @@
 
 .alert {
     @include grid (4fr 1fr, null, null, null, center) {
-        @include margins (10px, auto, 10, auto);
         @include WxH (80%, 3em);
+    margin: 10px auto;
     background-color: $primary-color;
     padding: 3px 10px;
     border-radius: 5px;

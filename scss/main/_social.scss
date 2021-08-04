@@ -27,7 +27,7 @@
 
 .social-svg {
     @include WxH (80px, 80px) {
-        @include margins (auto, 5px, auto, 5px);
+    margin: auto 5px;
     float: left;
     background: $primary-color;
     border-radius: 50%;

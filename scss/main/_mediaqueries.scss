@@ -92,9 +92,8 @@
     }
 
     .member-photo {
-        @include margins (auto, 15px, auto, 15px) {
+        margin: auto, 15px;
         float: left;
-        }
     }
 
     .date {

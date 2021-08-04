@@ -391,12 +391,9 @@ header h1 {
   fill: #fff; }
 
 .heading-picture {
-  margin-top: auto;
-  margin-right: 5px;
-  margin-bottom: auto;
-  margin-left: 5px;
   width: 40px;
   height: 40px;
+  margin: auto 5px;
   border-radius: 50%; }
 
 .header-right-wrapper p {
@@ -473,12 +470,9 @@ header h1 {
   display: grid;
   grid-template-columns: 4fr 1fr;
   align-items: center;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-bottom: 10;
-  margin-left: auto;
   width: 80%;
   height: 3em;
+  margin: 10px auto;
   background-color: #7477bf;
   padding: 3px 10px;
   border-radius: 5px; }
@@ -533,10 +527,7 @@ header h1 {
 .social-svg {
   width: 80px;
   height: 80px;
-  margin-top: auto;
-  margin-right: 5px;
-  margin-bottom: auto;
-  margin-left: 5px;
+  margin: auto 5px;
   float: left;
   background: #7477bf;
   border-radius: 50%; }
@@ -840,10 +831,7 @@ input:checked + .slider:before {
     margin-bottom: auto; }
 
   .member-photo {
-    margin-top: auto;
-    margin-right: 15px;
-    margin-bottom: auto;
-    margin-left: 15px;
+    margin: auto, 15px;
     float: left; }
 
   .date {

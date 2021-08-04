@@ -84,8 +84,8 @@ header h1 {
 }
 
 .heading-picture {
-    @include margins (auto, 5px, auto, 5px) {
-    @include WxH (40px, 40px);
+    @include WxH (40px, 40px) {
+    margin: auto 5px;
     border-radius: 50%;
     }
 }
