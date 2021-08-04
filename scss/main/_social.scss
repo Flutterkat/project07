@@ -6,6 +6,7 @@
 
 .social-block {
     @include WxH (90%, 100px) {
+    display: flex;
     border: $border;
     border-radius: 5px;;
     background-color:$background-color;
@@ -25,7 +26,8 @@
 }
 
 .social-svg {
-    @include WxH (100px, 100px) {
+    @include WxH (80px, 80px) {
+        @include margins (auto, 5px, auto, 5px);
     float: left;
     background: $primary-color;
     border-radius: 50%;

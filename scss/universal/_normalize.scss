@@ -355,5 +355,21 @@
 
 body {
   @include grid (100%, null, null, null, null);
+  grid-template-areas: "header"
+                       "nav"
+                       "content";
+  width: 100%;
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: content;
   width: 100%;
 }
