@@ -1,12 +1,10 @@
+const chartLinksId = document.getElementById('chart-links');
 const notification = document.getElementsByClassName('notification')[0];
 const popUpWindow = document.createElement('div');
 const bellPosition = document.getElementsByClassName('bell')[0];
 const popUpStyle = popUpWindow.style;
-const alertBox = document.getElementsByClassName('alert-text')[0];
-const alertX = document.getElementsByClassName('dismiss')[0];
 const alertDiv = document.getElementsByClassName('alert')[0];
 let messageBtn = document.getElementsByClassName('message')[0];
-const formBtn = document.getElementsByTagName('form')[0];
 const body = document.getElementsByTagName('body')[0];
 const searchField = document.getElementsByClassName('search-field')[0];
 const textArea = document.getElementsByClassName('text-area')[0];
@@ -72,7 +70,7 @@ alertDiv.addEventListener('click', () => {
 });
 
 //sets the initial bg color of the 'hourly' button above lineChart.
-setHourlyBg = () => {
+const setHourlyBg = () => {
     const hourly = document.getElementsByClassName('hourly')[0];
     hourly.style.backgroundColor = '#90ee90';
 };
@@ -94,7 +92,7 @@ let chartBg = (color1, color2, color3, color4) => {
 
 
 //sets bg colors of 'hourly, daily, weekly, monthly' buttons above line chart on click.
-chartLinks.addEventListener('click', (e) => {
+chartLinksId.addEventListener('click', (e) => {
     let target = e.target;
     if (target.className === 'chart-link hourly') {
         chartBg('#90ee90', 'transparent', 'transparent', 'transparent');
